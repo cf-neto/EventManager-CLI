@@ -143,6 +143,36 @@ namespace ProjetoEventos.Services
 
 
             Console.WriteLine("\n\n");
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
+
+        public void SearchEvent()
+        {
+            Console.Write("write the name of the event: ");
+            string name_event = Console.ReadLine();
+
+            var search = from e in events
+                         where e.Name.Equals(name_event, StringComparison.OrdinalIgnoreCase)
+                         select e;
+
+            var result = search.ToList();
+
+            if (result.Any())
+            {
+                foreach (var eventItem in result)
+                {
+                    Console.WriteLine($"\n\nEvent: {eventItem.Name}\nDate: {eventItem.Date.ToShortDateString()}\nAddress: {eventItem.Address}\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nNo events found with that name.\n");
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }

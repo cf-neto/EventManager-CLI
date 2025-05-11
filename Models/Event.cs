@@ -11,7 +11,9 @@ namespace ProjetoEventos.Models
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string Address { get; set; }
+
         public static string FilePath = "Events.csv";
+
         public Event(string name,  DateTime date, string address)
         {
             Name = name;

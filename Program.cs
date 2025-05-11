@@ -54,14 +54,15 @@ namespace ProjetoEventos
                         Console.Clear();
 
                         eventService.ReadEvents();
-
-                        Console.WriteLine("Press any key to exit...");
-                        Console.ReadKey();
                         break;
 
                     case "4":
-                        Console.WriteLine("Press any key to exit...");
-                        Console.ReadKey();
+                        Console.Clear();
+
+                        eventService.SearchEvent();
+                        break;
+
+                    case "0":
                         Environment.Exit(0);
                         break;
                 }
@@ -75,7 +76,8 @@ namespace ProjetoEventos
             Console.WriteLine("1. Add Event");
             Console.WriteLine("2. Remove Event");
             Console.WriteLine("3. Read File");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Search Event");
+            Console.WriteLine("0. Exit");
             Console.WriteLine("= = =  ==  = = =\n");
         }
     }
